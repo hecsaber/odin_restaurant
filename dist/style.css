@@ -1,0 +1,304 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* My actual CSS */
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,.3);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  padding: 10px;
+  box-shadow: 0 3px 20px 0 rgba(0,0,0,.3);
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  padding: 20px 0;
+  color: #333;
+}
+
+.menu > span {
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  box-shadow: 0 -1px 0 0 #333 inset;
+}
+
+span:hover {
+  box-shadow: 0 -30px 0 0 #333 inset;
+  color: #fff;
+}
+
+.menu > span:not(:last-of-type) {
+  margin-right: 30px;
+}
+
+.lead {
+  width: 100%;
+  min-height: 400px;
+  background: url('./img/vgn_cover.jpg') no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-out;
+}
+
+.lead-box {
+  content: '';
+  height: 300px;
+  width: 30%;
+  background-color:rgba(255,255,255,.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#line-1, #line-3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+#line-2::before, #line-2::after {
+  content: '';
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+  display: block;
+  margin: 10px 0;
+}
+
+#line-2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+article {
+  display: grid;
+  gap: 0.75rem;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+#cooking {
+  grid-template-columns: 2fr 1fr;
+}
+
+article button {
+  align-self: flex-start;
+  justify-self: end;
+  height: 3rem;
+  min-width: 100px;
+  margin: 0 20px;
+}
+
+article p, article h1 {
+  line-height: 1.3rem;
+  padding: 0 20px;
+}
+
+#cooking img {
+  width: 100%;
+  grid-column: 2 / 3;
+  grid-row: 1 / -1;
+}
+
+#order {
+  grid-template-columns: 1fr 2fr;
+  margin: 0;
+}
+
+#order img {
+  width: 100%;
+  grid-row: 1 / -1;
+}
+
+#order-content {
+  margin-left: 30px;
+}
+
+#order button {
+  justify-self: start;
+}
+
+article button {
+  box-shadow: 0 0 0 0 #333 inset;
+  transition: all 0.5s ease-out;
+  border: none;
+  cursor: pointer;
+  background-color: #eee;
+}
+
+article button:hover {
+  box-shadow: 0 -50px 0 0 #333 inset;
+  color: #fff;
+}
+
+
+footer {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  color: #fff !important;
+}
+
+footer #line-2::before, footer #line-2::after {
+  background-color: #fff; 
+}
+
+.foot-box {
+  height: 80%;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lead.menu-content {
+  background: url("./img/vgn_menu.jpg") no-repeat;
+  background-size: cover;
+  transition: all 1s ease-out;
+}
+
+.menu-holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.menu-item {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  border: 3px solid #eee;
+  box-shadow: 0 0 0 0 #333 inset;
+  transition: all 0.8s ease-out;
+}
+
+.menu-item .menu-content {
+  margin: 15px;
+  width: 50%;
+}
+
+.menu-item h2 {
+  font-size: 3rem;
+  color: #333;
+  padding: 1rem 0;
+  transition: all 0.3s ease-out;
+}
+
+.menu-item h2::after {
+  margin-top: 1rem;
+  display: block;
+  content: '';
+  background-color: #333;
+  width: 50%;
+  height: 3px;
+  transition: all 0.3s ease-out;
+}
+
+.menu-item .photo {
+  width: 10em;
+  height: 10rem;
+  background: url(./img/burger.jpg) no-repeat center center;
+  background-size: 16rem;
+  border-radius: 100%;
+  margin: 15px;
+}
+
+.menu-item:hover {
+  box-shadow: 1040px 0 0 0 #333 inset;
+  color: #fff;
+}
+
+.menu-item:hover h2 {
+  color: #fff;
+}
+
+.menu-item:hover h2::after {
+  background-color: #fff;
+}
+
+.mapouter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mapouter h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+  
+.gmap_canvas {
+  overflow:hidden;
+  background:none!important;
+  max-width:1200px;
+  height:300px;
+}
